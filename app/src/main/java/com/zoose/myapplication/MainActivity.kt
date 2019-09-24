@@ -15,10 +15,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener { rollDice() }
 
         //extension fun
         fun String.lastChar(): Char = this.get(this.length - 1)
         "Gustavo".lastChar()
+    }
+
+    private fun rollDice() {
+        Toast.makeText(this, "button clicked.", Toast.LENGTH_SHORT)
     }
 }
