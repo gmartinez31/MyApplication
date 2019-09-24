@@ -17,14 +17,16 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.button)
         val textView = findViewById<TextView>(R.id.text)
-        button.setOnClickListener { rollDice(textView) }
+        val textView2 = findViewById<TextView>(R.id.text2)
+
+        button.setOnClickListener { rollDice(textView, textView2) }
 
         //extension fun
         fun String.lastChar(): Char = this.get(this.length - 1)
         "Gustavo".lastChar()
     }
 
-    private fun rollDice(textView: TextView) {
+    private fun rollDice(textView: TextView, textView2: TextView) {
         Toast.makeText(this, "button clicked.", Toast.LENGTH_SHORT).show()
         textView.text = getString(R.string.dice_rolled)
     }

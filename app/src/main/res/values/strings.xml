@@ -3,4 +3,5 @@
     <string name="roll">ROLL</string>
     <string name="text_label">Hello World!</string>
     <string name="dice_rolled">Dice Rolled!</string>
+    <string name="change_me">Change me</string>
 </resources>
