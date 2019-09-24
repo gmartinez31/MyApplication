@@ -16,14 +16,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val button = findViewById<Button>(R.id.button)
-        button.setOnClickListener { rollDice() }
+        val textView = findViewById<TextView>(R.id.text)
+        button.setOnClickListener { rollDice(textView) }
 
         //extension fun
         fun String.lastChar(): Char = this.get(this.length - 1)
         "Gustavo".lastChar()
     }
 
-    private fun rollDice() {
-        Toast.makeText(this, "button clicked.", Toast.LENGTH_SHORT)
+    private fun rollDice(textView: TextView) {
+        Toast.makeText(this, "button clicked.", Toast.LENGTH_SHORT).show()
+        textView.text = getString(R.string.dice_rolled)
     }
 }
