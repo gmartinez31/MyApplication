@@ -9,13 +9,12 @@
         android:orientation="vertical"
         android:layout_gravity="center_vertical">
 
-    <TextView
-            android:id="@+id/text"
+    <ImageView
+            android:id="@+id/dice_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_label"
             android:layout_gravity="center_horizontal"
-            android:textSize="30sp"/>
+            android:src="@drawable/dice_1" />
 
     <Button
             android:id="@+id/button"
@@ -23,13 +22,5 @@
             android:layout_height="wrap_content"
             android:text="@string/roll"
             android:layout_gravity="center_horizontal"/>
-
-    <TextView
-            android:id="@+id/text2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/change_me"
-            android:layout_gravity="center_horizontal"
-            android:textSize="40sp" />
 
 </LinearLayout>

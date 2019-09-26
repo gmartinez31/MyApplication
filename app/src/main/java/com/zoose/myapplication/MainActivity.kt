@@ -1,13 +1,11 @@
 package com.zoose.myapplication
 
-import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.ImageView
 import android.widget.Toast
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,18 +14,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val button = findViewById<Button>(R.id.button)
-        val textView = findViewById<TextView>(R.id.text)
-        val textView2 = findViewById<TextView>(R.id.text2)
+        val diceImage = findViewById<ImageView>(R.id.dice_image)
 
-        button.setOnClickListener { rollDice(textView, textView2) }
+        button.setOnClickListener { rollDice(diceImage) }
 
         //extension fun
         fun String.lastChar(): Char = this.get(this.length - 1)
         "Gustavo".lastChar()
     }
 
-    private fun rollDice(textView: TextView, textView2: TextView) {
+    private fun rollDice(diceImage: ImageView) {
         Toast.makeText(this, "button clicked.", Toast.LENGTH_SHORT).show()
-        textView.text = getString(R.string.dice_rolled)
+        val randomInt = Random.nextInt(6) + 1
+        val drawableResource = when (randomInt) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+        diceImage.setImageResource(drawableResource)
     }
 }
