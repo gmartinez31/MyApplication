@@ -7,13 +7,15 @@ import android.widget.ImageView
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    // best practice to use lateinit with fields that hold views just like this guy to avoid calling the costly findviewbyid
+    lateinit var diceImage : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val button = findViewById<Button>(R.id.button)
-        val diceImage = findViewById<ImageView>(R.id.dice_image)
+        diceImage = findViewById(R.id.dice_image)
 
         button.setOnClickListener { rollDice(diceImage) }
 
